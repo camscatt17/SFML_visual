@@ -1,0 +1,23 @@
+const int H = 15;
+const int W = 80;
+
+
+String TileMap[H] = {
+
+"B                                                                             B",
+"B                                                                             B",
+"B                                                                             B",
+"B                                    000                                      B",
+"B                                                                             B",
+"B                                                                             B",
+"B                                                                             B",
+"B     0                         BB                                            B",
+"B                             BB  BB                                          B",
+"B                           BB      BB                                        B",
+"B            BB           BB          BB                                      B",
+"BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+"BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+"BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+"BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+
+};
