@@ -1,23 +1,20 @@
-//megaman spritesheet with 85/70 pixels
+//Movimento de objeto através de input
 
 #include "SFML/Graphics.hpp"
 
 int main() {
 
-	//Passo básico para renderizar uma janela
-	sf::RenderWindow window(sf::VideoMode(640, 480), "megaman runnig");
+	sf::RenderWindow window(sf::VideoMode(320, 480), "car moving by input");
+	window.setFramerateLimit(60);
+	
 	sf::Event event;
 
 	sf::Texture texture;
-	texture.loadFromFile("courseSFML/resources/mega.png");
+	texture.loadFromFile("courseSFML/resources/car.png");
 
-	//Cria-se um objeto do tipo Rect que representará o tamanho do sprite
-	sf::IntRect rect(0, 0, 85, 70);
-
-	sf::Sprite sprite(texture, rect);
-
-	sf::Clock clock;
-
+	//Usa-se a figura inteira, não mais especificando sua área interna
+	sf::Sprite sprite(texture);
+	sprite.setPosition(60, 300); //Estabelecemos onde a figura(sprite) será posicionado na window criada através do método RenderWindow
 
 	while (window.isOpen()) {
 		while (window.pollEvent(event)) {
@@ -25,18 +22,15 @@ int main() {
 				window.close();
 		}
 
-		if (clock.getElapsedTime().asSeconds() > 0.4f) {
-			if (rect.left == 255)
-				rect.left = 0;
-			else
-				rect.left += 85;
-
-			//É necessário atualizar o spite a cada passagem do loop
-			sprite.setTextureRect(rect);
-			clock.restart();
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+			sprite.move(0, -1.0);
 		}
 
-		window.clear();
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+			sprite.move(0, 1.0);
+		}
+
+		window.clear(sf::Color::White);
 		window.draw(sprite);
 		window.display();
 	}
