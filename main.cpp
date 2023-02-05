@@ -5,7 +5,7 @@
 int main() {
 
 	sf::RenderWindow window(sf::VideoMode(320, 480), "car moving by input");
-	window.setFramerateLimit(60);
+	window.setFramerateLimit(60); //Limitador do processador, padronizando o jogo para as diferentes capacidades dos computadores
 	
 	sf::Event event;
 
